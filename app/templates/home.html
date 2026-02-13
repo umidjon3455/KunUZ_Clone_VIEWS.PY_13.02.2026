@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+{% for news in news %}
+<a href="{% url 'news_detail' news.slug %}" style="text-decoration:none; color:inherit;">
+    <div class="news-card">
+
+        {% if news.image %}
+            <img src="{{ news.image.url }}" width="250">
+        {% endif %}
+
+        <div>
+            <h2>{{ news.title }}</h2>
+            <p>{{ news.body|truncatewords:25 }}</p>
+        </div>
+
+    </div>
+</a>
+{% endfor %}
+
+</head>
+</html>

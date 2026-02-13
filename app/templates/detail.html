@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ news.title }}</title>
+</head>
+<body style="background:#1976d2; color:white; font-family:Arial;">
+
+    <div style="width:70%; margin:50px auto; background:white; color:black; padding:30px; border-radius:15px;">
+
+        <h1>{{ news.title }}</h1>
+
+        {% if news.image %}
+            <img src="{{ news.image.url }}" width="100%" style="border-radius:10px;">
+        {% endif %}
+
+        <p style="margin-top:20px; font-size:18px;">
+            {{ news.body }}
+        </p>
+
+        <br>
+        <a href="/" style="color:blue;">⬅ Orqaga</a>
+
+    </div>
+
+</body>
+</html>
