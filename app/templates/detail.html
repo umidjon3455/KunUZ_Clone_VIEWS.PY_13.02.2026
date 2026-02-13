@@ -2,25 +2,47 @@
 <html>
 <head>
     <title>{{ news.title }}</title>
+    <style>
+        body {
+            background: #1976d2;
+            font-family: Arial;
+        }
+
+        .container {
+            width: 70%;
+            margin: 50px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+        }
+
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: blue;
+        }
+    </style>
 </head>
-<body style="background:#1976d2; color:white; font-family:Arial;">
+<body>
 
-    <div style="width:70%; margin:50px auto; background:white; color:black; padding:30px; border-radius:15px;">
+<div class="container">
 
-        <h1>{{ news.title }}</h1>
+    <h1>{{ news.title }}</h1>
 
-        {% if news.image %}
-            <img src="{{ news.image.url }}" width="100%" style="border-radius:10px;">
-        {% endif %}
+    {% if news.image %}
+        <img src="{{ news.image.url }}">
+    {% endif %}
 
-        <p style="margin-top:20px; font-size:18px;">
-            {{ news.body }}
-        </p>
+    <p>{{ news.body }}</p>
 
-        <br>
-        <a href="/" style="color:blue;">⬅ Orqaga</a>
+    <br>
+    <a href="/">⬅ Orqaga</a>
 
-    </div>
+</div>
 
 </body>
 </html>
