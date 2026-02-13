@@ -1,22 +1,66 @@
 <!DOCTYPE html>
-<html lang="uz">
+<html>
 <head>
-{% for news in news %}
-<a href="{% url 'news_detail' news.slug %}" style="text-decoration:none; color:inherit;">
-    <div class="news-card">
+    <title>Yangiliklar</title>
+    <style>
+        body {
+            background: #1976d2;
+            font-family: Arial;
+        }
 
-        {% if news.image %}
-            <img src="{{ news.image.url }}" width="250">
-        {% endif %}
+        .container {
+            width: 70%;
+            margin: 40px auto;
+        }
 
-        <div>
-            <h2>{{ news.title }}</h2>
-            <p>{{ news.body|truncatewords:25 }}</p>
-        </div>
+        .news-card {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            transition: 0.3s;
+        }
 
-    </div>
-</a>
-{% endfor %}
+        .news-card:hover {
+            transform: scale(1.02);
+        }
 
+        .news-card img {
+            width: 250px;
+            border-radius: 10px;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
 </head>
+<body>
+
+<div class="container">
+
+    {% for news in news %}
+    <a href="{% url 'news_detail' news.slug %}">
+        <div class="news-card">
+
+            {% if news.image %}
+                <img src="{{ news.image.url }}">
+            {% endif %}
+
+            <div>
+                <h2>{{ news.title }}</h2>
+                <p>{{ news.body|truncatewords:25 }}</p>
+            </div>
+
+        </div>
+    </a>
+    {% endfor %}
+
+</div>
+
+</body>
 </html>
