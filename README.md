@@ -1,2 +1,2 @@
-views.py yozildi 3-kun
+views.py yangi varianti yozildi 3-kun
 Abdullayev Umidjon
